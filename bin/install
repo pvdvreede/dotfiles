@@ -1,0 +1,43 @@
+#! /bin/bash
+
+set -e
+
+DOTFILES_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/../" && pwd )
+
+function msg {
+  echo "---> $1"
+}
+
+function lnk {
+  src="$DOTFILES_DIR/$1"
+  dest=${2:-".$1"}
+  full_dest="${3:-$HOME}/$dest"
+
+  msg "Linking $src to $full_dest..."
+  ln -sfT $src $full_dest
+}
+
+function clean {
+  root=$1
+
+  msg "Cleaning any dead symlinks in $root..."
+  for i in $(file $root/* | grep broken | cut -d : -f 1); do
+    msg "Removing $i..."
+    rm $i
+  done
+}
+
+msg "Installing dotfiles..."
+
+msg "Updating git submodules..."
+git submodule update --init --recursive
+
+clean "~"
+
+lnk "vimrc"
+lnk "vim"
+lnk "gitconfig"
+lnk "bashrc"
+lnk "i3"
+
+msg "All done!"

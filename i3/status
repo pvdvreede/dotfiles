@@ -1,0 +1,54 @@
+general {
+        colors = true
+        interval = 5
+        color_good = "#9e9e9e"
+        color_bad = "#0000ff"
+        color_degraded = "#005faf"
+}
+
+order += "disk /"
+order += "run_watch DHCP"
+order += "wireless wlan0"
+order += "battery 0"
+order += "load"
+order += "tztime local"
+order += "volume master"
+
+wireless wlan0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
+}
+
+battery 0 {
+        format = " %status %percentage %remaining "
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+run_watch DHCP {
+        pidfile = "/run/dhclient*.pid"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+volume master {
+        format = "♪: %volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}

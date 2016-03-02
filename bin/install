@@ -28,6 +28,7 @@ function clean {
 }
 
 msg "Installing dotfiles..."
+mkdir -p ~/.config/fish
 
 msg "Updating git submodules..."
 git submodule update --init --recursive
@@ -39,5 +40,6 @@ lnk "vim"
 lnk "gitconfig"
 lnk "bashrc"
 lnk "i3"
+lnk "config.fish" ".config/fish/config.fish"
 
 msg "All done!"

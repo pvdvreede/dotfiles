@@ -12,3 +12,7 @@ alias 'glol' "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cres
 
 # docker
 alias 'fig' 'docker-compose'
+
+if test -f $HOME/.custom.fish
+  source $HOME/.custom.fish
+end

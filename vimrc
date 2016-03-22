@@ -1,3 +1,6 @@
+" cant use fish for vim shell so set to bash
+set shell=bash
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
@@ -15,13 +18,15 @@ set enc=utf-8
 set term=xterm-256color
 let $TERM='xterm-256color'
 set t_Co=256
-colorscheme molokai
+colorscheme iceberg
+highlight CursorLineNr guifg=LightGray ctermfg=252 guibg=#202020 ctermbg=234 gui=NONE cterm=NONE term=NONE
 
 set nocompatible
 set showcmd
 
 set noswapfile
-set colorcolumn=80
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 " searching
 set hlsearch
 set ignorecase
@@ -33,12 +38,15 @@ set paste
 set cul
 set cuc
 
+set relativenumber
+set number
+
 " Tab specific option
-set tabstop=4                   "A tab is 8 spaces
-set expandtab                   "Always uses spaces instead of tabs
-set softtabstop=2               "Insert 4 spaces when tab is pressed
-set shiftwidth=2                "An indent is 4 spaces
-set shiftround                  "Round indent to nearest shiftwidth multiple
+set tabstop=4
+set expandtab
+set softtabstop=2
+set shiftwidth=2
+set shiftround
 "}}}
 
 " GUI Gvim -------- {{{
@@ -66,6 +74,9 @@ nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 " Add a line while in Normal mode
 nnoremap <Leader>o o<esc>k
 nnoremap <Leader>O O<esc>j
+
+nnoremap <Leader>t :CtrlP<cr>
+nnoremap <Leader>b :CtrlPBuffer<cr>
 "}}}
 
 " Autocommands ------------ {{{
@@ -79,22 +90,35 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+augroup filetype_tmux
+    autocmd!
+    autocmd FileType tmux setlocal foldmethod=marker
+augroup END
+
+augroup numbering
+  autocmd!
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
+augroup END
 "}}}
 
 " Status line ------------ {{{
+
 set laststatus=2
 
 " Left side
 set statusline=%.20F
 set statusline+=\ \  " separator
+set statusline+=%2*%m%*
+set statusline+=\ \  " separator
 set statusline+=%y
-
 set statusline+=%=
 
+
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 " Right side
-set statusline+=%4l
-set statusline+=\ /\   " number split
-set statusline+=%4L
+set statusline+=\ [line\ %l\/%L]
 "}}}
 
 " Plugin: CTRL-P -------- {{{

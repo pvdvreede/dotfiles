@@ -19,9 +19,6 @@
 [submodule "vim/bundle/vim-elixir"]
 	path = vim/bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
@@ -49,9 +46,21 @@
 [submodule "vim/bundle/vim-drake-syntax"]
 	path = vim/bundle/vim-drake-syntax
 	url = https://bitbucket.org/larsyencken/vim-drake-syntax.git
-[submodule "vim/bundle/scratch.vim"]
-	path = vim/bundle/scratch.vim
-	url = https://github.com/mtth/scratch.vim
 [submodule "vim/bundle/Dockerfile.vim"]
 	path = vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = https://github.com/elzr/vim-json.git
+[submodule "vim/bundle/vim-fish"]
+	path = vim/bundle/vim-fish
+	url = https://github.com/dag/vim-fish.git
+[submodule "vim/bundle/moonscript-vim"]
+	path = vim/bundle/moonscript-vim
+	url = https://github.com/leafo/moonscript-vim.git
+[submodule "vim/bundle/vim-monochrome"]
+	path = vim/bundle/vim-monochrome
+	url = https://github.com/fxn/vim-monochrome.git
+[submodule "vim/bundle/iceberg.vim"]
+	path = vim/bundle/iceberg.vim
+	url = https://github.com/cocopon/iceberg.vim.git

@@ -14,7 +14,7 @@ function lnk {
   full_dest="${3:-$HOME}/$dest"
 
   msg "Linking $src to $full_dest..."
-  ln -sfT $src $full_dest
+  ln -sf $src $full_dest
 }
 
 function clean {
@@ -41,5 +41,6 @@ lnk "gitconfig"
 lnk "bashrc"
 lnk "i3"
 lnk "config.fish" ".config/fish/config.fish"
+lnk "tmux.conf"
 
 msg "All done!"

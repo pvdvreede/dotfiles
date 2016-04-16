@@ -8,29 +8,31 @@ execute pathogen#infect()
 " make our leader key be space
 let mapleader=" "
 filetype on
-filetype indent on
 filetype plugin on
+filetype indent on
 
 set t_ut= " improve screen clearing by using the background color
-set background=dark
 syntax enable
 set enc=utf-8
-set term=xterm-256color
-let $TERM='xterm-256color'
+set background=dark
 set t_Co=256
-colorscheme iceberg
-highlight CursorLineNr guifg=LightGray ctermfg=252 guibg=#202020 ctermbg=234 gui=NONE cterm=NONE term=NONE
+" in case t_Co alone doesn't work, add this as well:
+" i.e. Force 256 colors harder
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+
+colorscheme molokai
 
 set nocompatible
 set showcmd
 
 set noswapfile
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%121v.\+/
 " searching
-set hlsearch
 set ignorecase
 set incsearch
+set hlsearch
 
 set paste
 
@@ -42,11 +44,12 @@ set relativenumber
 set number
 
 " Tab specific option
-set tabstop=4
 set expandtab
+set tabstop=4
 set softtabstop=2
 set shiftwidth=2
-set shiftround
+set autoindent
+set smartindent
 "}}}
 
 " GUI Gvim -------- {{{

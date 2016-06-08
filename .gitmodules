@@ -76,3 +76,6 @@
 [submodule "vim/bundle/vim-rubyformat"]
 	path = vim/bundle/vim-rubyformat
 	url = https://github.com/vim-scripts/vim-rubyformat.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot

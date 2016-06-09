@@ -3,6 +3,8 @@ function fish_prompt
 end
 
 function fish_greeting
+  echo "Running tmux sessions:"
+  tmux ls
 end
 
 function export

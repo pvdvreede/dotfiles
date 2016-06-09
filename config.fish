@@ -66,6 +66,13 @@ function lein
   run-docker lein clojure:latest
 end
 
+function remove-git-submodule
+  set name $argv[1]
+  git submodule deinit $name
+  git rm $name
+  rm -rf .git/modules/$name
+end
+
 if test -f $HOME/.custom.fish
   source $HOME/.custom.fish
 end

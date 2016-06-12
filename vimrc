@@ -78,6 +78,11 @@ nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 nnoremap <Leader>o o<esc>k
 nnoremap <Leader>O O<esc>j
 
+nnoremap <Leader>e :Explore<cr>
+
+" Indent whole file and return to position
+nnoremap <Leader>i mzgg=G`z:retab<cr>
+
 nnoremap <Leader>t :CtrlP<cr>
 nnoremap <Leader>b :CtrlPBuffer<cr>
 "}}}
@@ -90,13 +95,13 @@ augroup filetype_all
 augroup END
 
 augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
 augroup filetype_tmux
-    autocmd!
-    autocmd FileType tmux setlocal foldmethod=marker
+  autocmd!
+  autocmd FileType tmux setlocal foldmethod=marker
 augroup END
 
 augroup numbering

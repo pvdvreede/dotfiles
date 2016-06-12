@@ -36,6 +36,7 @@ values."
      clojure
      ruby
      yaml
+     shell-scripts
      (shell :variables
             shell-default-position 'right
             shell-default-shell 'ansi-term

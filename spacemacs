@@ -258,7 +258,10 @@ you should place you code here."
   ;; Stop the cursor jumping back one step from insert to normal mode"
   (setq show-trailing-whitespace t)
   (setq require-final-newline t)
-  (setq evil-move-cursor-back nil))
+  (setq evil-move-cursor-back nil)
+
+  ;; Emulate vim's ctrl-p plugin
+  (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile))
 
 
 

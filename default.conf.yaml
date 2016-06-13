@@ -4,14 +4,16 @@
       relink: true
       create: true
       force: true
+    shell:
+      stderr: true
 
 - clean: ["~"]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules...]
-  - [curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher, Installing fisherman...]
 
 - link:
+    ~/.bashrc: bashrc
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig

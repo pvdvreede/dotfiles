@@ -31,6 +31,7 @@ values."
      haskell
      elixir
      git
+     version-control
      markdown
      org
      clojure

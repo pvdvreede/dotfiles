@@ -28,6 +28,7 @@ values."
      dockerfile
      windows-scripts
      typescript
+     javascript
      haskell
      elixir
      git

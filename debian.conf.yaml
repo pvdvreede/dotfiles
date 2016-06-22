@@ -10,5 +10,5 @@
     - ["curl -L http://download.opensuse.org/repositories/shells:fish:release:2/Debian_8.0/Release.key | sudo apt-key add -", "Adding fish apt key..."]
     - ["sudo bash -c \"echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list\"", "Adding fish shell apt repo..."]
     - ["sudo apt-get update -yq", "Updating apt cache..."]
-    - ["sudo apt-get install -yq fish git emacs vim tree htop tmux curl docker-engine python-pip", "Installing basic apps..."]
+    - ["sudo apt-get install -yq fish git emacs vim tree htop tmux curl docker-engine python-pip openconnect openvpn network-manager-openvpn-gnome network-manager-openconnect-gnome network-manager-vpnc-gnome vpnc", "Installing basic apps..."]
     - ["sudo pip install -U awscli docker-compose", "Installing awscli and docker-compose..."]

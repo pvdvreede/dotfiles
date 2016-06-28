@@ -39,6 +39,7 @@ alias 'tl' 'tmux ls'
 alias 'fig' 'docker-compose'
 
 set -U EDITOR (which vim)
+set -gx PATH $HOME/.bin/docker $PATH
 
 # docker based functions
 function run-docker
@@ -58,10 +59,6 @@ end
 
 function irb
   run-docker irb ruby:2.3
-end
-
-function ruby
-  run-docker ruby ruby:2.3
 end
 
 function lein

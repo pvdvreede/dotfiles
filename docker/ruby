@@ -1,0 +1,15 @@
+#! /bin/bash
+
+cmd="$@"
+
+if [ $# -eq 0 ]; then
+    cmd="bash"
+fi
+
+docker run -ti --rm \
+       -v $(pwd):/app \
+       -v $HOME/.gems:/gems \
+       --workdir /app \
+       -e GEM_HOME=/gems \
+       -e PATH=/gems/bin:$PATH \
+       ruby:2.3 $cmd

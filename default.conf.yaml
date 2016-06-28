@@ -13,6 +13,7 @@
   - [git submodule update --init --recursive, Installing submodules...]
 
 - link:
+    ~/.bin/docker: docker
     ~/.bashrc: bashrc
     ~/.vim: vim
     ~/.vimrc: vimrc

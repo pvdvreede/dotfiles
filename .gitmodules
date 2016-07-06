@@ -25,24 +25,6 @@
 [submodule "vim/bundle/rainbow"]
 	path = vim/bundle/rainbow
 	url = https://github.com/luochen1990/rainbow.git
-[submodule "vim/bundle/vim-fireplace"]
-	path = vim/bundle/vim-fireplace
-	url = https://github.com/tpope/vim-fireplace.git
-[submodule "vim/bundle/vim-sexp"]
-	path = vim/bundle/vim-sexp
-	url = https://github.com/guns/vim-sexp.git
-[submodule "vim/bundle/vim-sexp-mappings-for-regular-people"]
-	path = vim/bundle/vim-sexp-mappings-for-regular-people
-	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people.git
-[submodule "vim/bundle/vim-clojure-highlight"]
-	path = vim/bundle/vim-clojure-highlight
-	url = https://github.com/guns/vim-clojure-highlight.git
-[submodule "vim/bundle/vim-clojure-static"]
-	path = vim/bundle/vim-clojure-static
-	url = https://github.com/guns/vim-clojure-static.git
-[submodule "vim/bundle/vim-cljfmt"]
-	path = vim/bundle/vim-cljfmt
-	url = https://github.com/venantius/vim-cljfmt.git
 [submodule "vim/bundle/vim-drake-syntax"]
 	path = vim/bundle/vim-drake-syntax
 	url = https://bitbucket.org/larsyencken/vim-drake-syntax.git
@@ -55,12 +37,6 @@
 [submodule "vim/bundle/vim-fish"]
 	path = vim/bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "emacs.d"]
 	path = emacs.d
 	url = https://github.com/syl20bnr/spacemacs
@@ -73,3 +49,9 @@
 [submodule "vim/bundle/vim-rsi"]
 	path = vim/bundle/vim-rsi
 	url = git://github.com/tpope/vim-rsi.git
+[submodule "vim/bundle/vim-move"]
+	path = vim/bundle/vim-move
+	url = https://github.com/matze/vim-move.git
+[submodule "vim/bundle/vim-ps1"]
+	path = vim/bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1.git

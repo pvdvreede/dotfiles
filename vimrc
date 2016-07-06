@@ -6,7 +6,8 @@ execute pathogen#infect()
 
 " General VIM ----------- {{{
 " make our leader key be space
-let mapleader=" "
+let mapleader="\<space>"
+let maplocalleader=","
 filetype on
 filetype plugin on
 filetype indent on
@@ -64,7 +65,6 @@ set guioptions-=l
 "}}}
 
 " netrw -------- {{{
-map <leader>k :Explore<cr>
 let g:netrw_liststyle=3
 "}}}
 
@@ -83,8 +83,25 @@ nnoremap <Leader>e :Explore<cr>
 " Indent whole file and return to position
 nnoremap <Leader>i mzgg=G`z:retab<cr>
 
+" Reload my vimrc on the fly
+nnoremap <Leader>sv :so $MYVIMRC<cr>
+nnoremap <Leader>ev :split $MYVIMRC<cr>
+
 nnoremap <Leader>t :CtrlP<cr>
 nnoremap <Leader>b :CtrlPBuffer<cr>
+
+" Force homerow navigation
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+vnoremap <Up> <nop>
+vnoremap <Down> <nop>
+vnoremap <Left> <nop>
+vnoremap <Right> <nop>
+
+inoremap jk <esc>
+inoremap <C-D> <C-O>yyp
 "}}}
 
 " Autocommands ------------ {{{
@@ -109,6 +126,11 @@ augroup numbering
   autocmd InsertEnter * :set number
   autocmd InsertLeave * :set relativenumber
 augroup END
+
+augroup commenting
+  autocmd!
+  autocmd FileType fish,python,ruby,sh,ps1 nnoremap <buffer> <localleader>c I#<esc>
+augroup END
 "}}}
 
 " Status line ------------ {{{
@@ -116,7 +138,8 @@ augroup END
 set laststatus=2
 
 " Left side
-set statusline=%.20F
+set statusline=\ \  " separator
+set statusline+=%.20F
 set statusline+=\ \  " separator
 set statusline+=%2*%m%*
 set statusline+=\ \  " separator
@@ -127,6 +150,8 @@ set statusline+=%=
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 " Right side
 set statusline+=\ [line\ %l\/%L]
+
+hi StatusLine ctermbg=white ctermfg=69
 "}}}
 
 " Plugin: CTRL-P -------- {{{
@@ -168,10 +193,10 @@ let g:ctrlp_prompt_mappings = {
 
 " Plugin: easyalign ------- {{{
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
+vnoremap <Enter> <Plug>(EasyAlign)
 "
 " " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 "}}}
 
 " Plugin: rainbow parenthesis ------- {{{
@@ -179,35 +204,7 @@ nmap ga <Plug>(EasyAlign)
 let g:rainbow_active=1
 "}}}
 
-" Plugin: easy-motion ----------- {{{
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-
-map <Leader> <Plug>(easymotion-prefix)
-nmap s <Plug>(easymotion-overwin-f2)
-
-" JK motions: Line motions
-nmap <Leader>j <Plug>(easymotion-j)
-nmap <Leader>k <Plug>(easymotion-k)
+" Plugin: vim-move -------------- {{{
+let g:move_key_modifier = 'C-A'
 "}}}
-
-" Plugin: Airline -------------- {{{
-let g:airline_theme = 'luna'
-let g:airline_powerline_fonts = 0
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = ' '
-let g:airline_right_sep = ' '
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
-" }}}
 

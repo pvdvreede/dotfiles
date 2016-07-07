@@ -5,8 +5,10 @@
       force: true
       relink: true
 
-- link:
-    ~/.vimrc: layers/vim/vimrc
-
 - shell:
     - git submodule update --init --recursive layers/vim
+
+- link:
+    ~/.vimrc: layers/vim/vimrc
+    ~/.vim/bundle: layers/vim/bundle
+

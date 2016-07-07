@@ -1,0 +1,14 @@
+---
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- shell:
+    - git submodule update --init --recursive layers/spacemacs
+
+- link:
+    ~/.spacemacs: layers/spacemacs/spacemacs
+    ~/.emacs.d: layers/spacemacs/emacs.d
+

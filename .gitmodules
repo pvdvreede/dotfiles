@@ -1,3 +1,12 @@
 [submodule "setup/dotbot"]
 	path = setup/dotbot
 	url = https://github.com/anishathalye/dotbot.git
+[submodule "layers/vim/bundle/vim-pathogen"]
+	path = layers/vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "layers/vim/bundle/ctrlp.vim"]
+	path = layers/vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "layers/spacemacs/emacs.d"]
+	path = layers/spacemacs/emacs.d
+	url = https://github.com/syl20bnr/spacemacs

@@ -12,41 +12,42 @@ function export
     set var (echo $argv | cut -f1 -d=)
     set val (echo $argv | cut -f2 -d=)
     set -g -x $var $val
-  else
-    echo 'export var=value'
-  end
+else
+  echo 'export var=value'
+end
 end
 
 # cli
-abbr 'll' 'ls -lah'
+alias 'll' 'ls -lah'
 
 # git
-abbr 'gc' 'git commit -v'
-abbr 'gb' 'git branch'
-abbr 'ga' 'git add'
-abbr 'gst' 'git status'
-abbr 'gco' 'git checkout'
-abbr 'gd' 'git diff'
-abbr 'gdc' 'git diff --cached'
-abbr 'glol' "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias 'gc' 'git commit -v'
+alias 'gb' 'git branch'
+alias 'ga' 'git add'
+alias 'gst' 'git status'
+alias 'gco' 'git checkout'
+alias 'gd' 'git diff'
+alias 'gdc' 'git diff --cached'
+alias 'glol' "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # tmux
-alias 'tn' 'tmux new-session -A -s '
-alias 'tna' 'tmux new-session -A -s (basename $PWD | tr . -)'
+alias 'tn' 'tmux -2 new-session -A -s '
+alias 'tna' 'tmux -2 new-session -A -s (basename $PWD | tr . -)'
 alias 'tl' 'tmux ls'
 
 # docker
 alias 'fig' 'docker-compose'
 
-set -U EDITOR (which vim)
+set -gx EDITOR (which vim)
 set -gx PATH $HOME/.bin/docker $PATH
 
 # docker based functions
 function run-docker
   if test (count $argv) -gt 2
     set cmd $argv[3..-1]
-  end
-  docker run -t -i --rm -v (pwd):/app -w /app --entrypoint $argv[1] $argv[2] $cmd
+end
+
+docker run -t -i --rm -v (pwd):/app -w /app --entrypoint $argv[1] $argv[2] $cmd
 end
 
 function mix
@@ -75,3 +76,6 @@ end
 if test -f $HOME/.custom.fish
   source $HOME/.custom.fish
 end
+
+# Set capslock to ctrl if we can
+setxkbmap -option ctrl:nocaps

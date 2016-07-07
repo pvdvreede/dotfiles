@@ -1,0 +1,16 @@
+---
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.gitconfig: layers/common/gitconfig
+    ~/.gitignore_global: layers/common/gitignore_global
+    ~/.bashrc: layers/common/bashrc
+    ~/.tmux.conf: layers/common/tmux.conf
+    ~/.config/fish/config.fish: layers/common/config.fish
+    ~/.fonts: layers/common/fonts

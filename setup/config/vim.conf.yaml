@@ -11,4 +11,4 @@
 - link:
     ~/.vimrc: layers/vim/vimrc
     ~/.vim/bundle: layers/vim/bundle
-
+    ~/.gvimrc: layers/vim/gvimrc

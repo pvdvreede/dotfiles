@@ -1,0 +1,12 @@
+" no toolbar
+set guioptions-=T
+" no menu
+set guioptions-=m
+" no scrollbars
+set guioptions-=r
+set guioptions-=b
+set guioptions-=l
+
+colorscheme sierra
+set guifont=inconsolata
+

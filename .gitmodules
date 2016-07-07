@@ -10,3 +10,12 @@
 [submodule "layers/spacemacs/emacs.d"]
 	path = layers/spacemacs/emacs.d
 	url = https://github.com/syl20bnr/spacemacs
+[submodule "layers/vim/bundle/vim-surround"]
+	path = layers/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "layers/vim/bundle/vim-commentary"]
+	path = layers/vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "layers/vim/bundle/theme-sierra"]
+	path = layers/vim/bundle/theme-sierra
+	url = https://github.com/AlessandroYorba/Sierra.git

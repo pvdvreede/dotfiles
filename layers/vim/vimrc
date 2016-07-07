@@ -51,17 +51,6 @@ set autoindent
 set smartindent
 "}}}
 
-" GUI Gvim -------- {{{
-" no toolbar
-set guioptions-=T
-" no menu
-set guioptions-=m
-" no scrollbars
-set guioptions-=r
-set guioptions-=b
-set guioptions-=l
-"}}}
-
 " netrw -------- {{{
 let g:netrw_liststyle=3
 "}}}
@@ -109,25 +98,15 @@ augroup filetype_all
   autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
-augroup filetype_vim
+augroup marker_folding
   autocmd!
-  autocmd FileType vim setlocal foldmethod=marker
-augroup END
-
-augroup filetype_tmux
-  autocmd!
-  autocmd FileType tmux setlocal foldmethod=marker
+  autocmd FileType vim,tmux,conf setlocal foldmethod=marker
 augroup END
 
 augroup numbering
   autocmd!
   autocmd InsertEnter * :set number
   autocmd InsertLeave * :set relativenumber
-augroup END
-
-augroup commenting
-  autocmd!
-  autocmd FileType fish,python,ruby,sh,ps1 nnoremap <buffer> <localleader>c I#<esc>
 augroup END
 "}}}
 

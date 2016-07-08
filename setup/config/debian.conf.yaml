@@ -1,0 +1,18 @@
+---
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- shell:
+    - sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+    - sudo bash -c "echo 'deb http://apt.dockerproject.org/repo debian-jessie main' > /etc/apt/sources.list.d/docker.list"
+    - curl -L http://download.opensuse.org/repositories/shells:fish:release:2/Debian_8.0/Release.key | sudo apt-key add -
+    - sudo bash -c "echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list"
+    - sudo apt-get update -qy
+    - sudo apt-get install -y tree htop tmux emacs vim vim-gnome docker-engine fish git curl python-pip
+    - sudo apt-get install -y openconnect openvpn vpnc
+    - sudo apt-get install -y network-manager-openvpn-gnome network-manager-openconnect-gnome network-manager-vpnc-gnome
+    - sudo pip install -U awscli docker-compose
+

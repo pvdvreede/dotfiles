@@ -6,9 +6,12 @@
       relink: true
 
 - shell:
+    - sudo add-apt-repository ppa:moka/daily
     - sudo apt-get update -qy
-    - sudo apt-get install -y i3 lxappearance i3blocks feh arandr
+    - sudo apt-get install -y i3 lxappearance i3blocks feh arandr moka-icon-theme
 
 - link:
     ~/.i3: layers/i3
+    ~/.gtkrc-2.0: layers/gtk/gtkrc-2.0
+    ~/.config/gtk-3.0/settings.ini: layers/gtk/gtk3-settings.ini
 

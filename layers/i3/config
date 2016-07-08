@@ -178,7 +178,7 @@ bar {
 exec --no-startup-id feh --bg-fill ~/.i3/images/background.jpg
 exec --no-startup-id nm-applet
 
-exec --no-startup-id chromium --app=https://inbox.google.com
-exec --no-startup-id slack
+exec --no-startup-id sleep 5; chromium --app=https://inbox.google.com
+exec --no-startup-id sleep 10; slack
 # }}}
 

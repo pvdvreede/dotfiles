@@ -8,5 +8,5 @@ set guioptions-=b
 set guioptions-=l
 
 colorscheme sierra
-set guifont=inconsolata
+set guifont=Inconsolata\ Medium\ 12
 

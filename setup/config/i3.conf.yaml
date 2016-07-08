@@ -1,0 +1,14 @@
+---
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- shell:
+    - sudo apt-get update -qy
+    - sudo apt-get install -y i3 lxappearance i3blocks feh arandr
+
+- link:
+    ~/.i3: layers/i3
+

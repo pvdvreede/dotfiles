@@ -9,10 +9,14 @@
     - sudo bash -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' > /etc/apt/sources.list.d/arc-theme.list"
     - curl -L http://download.opensuse.org/repositories/home:Horst3180/Debian_8.0/Release.key | sudo apt-key add -
     - sudo apt-get update -qy
-    - sudo apt-get install -y i3 lxappearance i3blocks feh arandr arc-theme
+    - sudo apt-get install -y i3 lxappearance i3blocks feh arandr arc-theme rxvt-unicode
 
 - link:
     ~/.i3: layers/i3
     ~/.gtkrc-2.0: layers/gtk/gtkrc-2.0
     ~/.config/gtk-3.0/settings.ini: layers/gtk/gtk3-settings.ini
+    ~/.Xresources: layers/urxvt/Xresources
+
+- shell:
+    - xrdb ~/.Xresources
 

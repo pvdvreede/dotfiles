@@ -182,6 +182,6 @@ let g:rainbow_active=1
 "}}}
 
 " Plugin: vim-move -------------- {{{
-let g:move_key_modifier = 'C-A'
+let g:move_key_modifier = 'A'
 "}}}
 

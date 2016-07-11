@@ -19,3 +19,9 @@
 [submodule "layers/vim/bundle/theme-sierra"]
 	path = layers/vim/bundle/theme-sierra
 	url = https://github.com/AlessandroYorba/Sierra.git
+[submodule "layers/vim/bundle/vim-move"]
+	path = layers/vim/bundle/vim-move
+	url = https://github.com/matze/vim-move.git
+[submodule "layers/vim/bundle/theme-stereokai"]
+	path = layers/vim/bundle/theme-stereokai
+	url = https://github.com/gummesson/stereokai.vim.git

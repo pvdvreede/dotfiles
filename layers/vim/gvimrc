@@ -7,6 +7,6 @@ set guioptions-=r
 set guioptions-=b
 set guioptions-=l
 
-colorscheme sierra
+colorscheme stereokai
 set guifont=Inconsolata\ Medium\ 12
 

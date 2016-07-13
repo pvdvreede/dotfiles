@@ -11,7 +11,7 @@
     - curl -L http://download.opensuse.org/repositories/shells:fish:release:2/Debian_8.0/Release.key | sudo apt-key add -
     - sudo bash -c "echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/2/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list"
     - sudo apt-get update -qy
-    - sudo apt-get install -y tree htop tmux emacs vim vim-gnome docker-engine fish git curl python-pip
+    - sudo apt-get install -y tree htop tmux emacs vim vim-gnome docker-engine fish git curl python-pip uuid-runtime jq
     - sudo apt-get install -y openconnect openvpn vpnc
     - sudo apt-get install -y network-manager-openvpn-gnome network-manager-openconnect-gnome network-manager-vpnc-gnome
     - sudo pip install -U awscli docker-compose

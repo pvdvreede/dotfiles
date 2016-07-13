@@ -12,4 +12,8 @@ docker run -ti --rm \
        --workdir /app \
        -e GEM_HOME=/gems \
        -e PATH=/gems/bin:$PATH \
+       -e AWS_ACCESS_KEY_ID \
+       -e AWS_SECRET_ACCESS_KEY \
+       -e AWS_SESSION_TOKEN \
+       -e AWS_REGION \
        ruby:2.3 $cmd

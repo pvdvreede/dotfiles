@@ -13,8 +13,8 @@
 (setq-default mode-line-format nil)
 
 (set-fringe-mode
-     (/ (- (frame-pixel-width)
-           (* 120 (frame-char-width))) 2))
+ (/ (- (frame-pixel-width)
+       (* 120 (frame-char-width))) 2))
 
 (set-face-attribute
   'fringe nil
@@ -22,6 +22,7 @@
   :background (face-background 'default))
 
 (setq pop-up-windows nil)
+(setq x-select-enable-clipboard t)
 
 (global-set-key (kbd "<escape>") 'keyboard-quit)
 (global-set-key (kbd "C-q") 'save-buffers-kill-terminal)
@@ -29,43 +30,51 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/")
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages
-  '(
-    ;; File modes
-    yaml-mode
-    dockerfile-mode
+(when (not (package-installed-p 'use-package))
+  (package-install 'use-package))
 
-    ;; Utils
-    helm
-    evil
-    
-    ;; Themes
-    atom-one-dark-theme))
+(use-package yaml-mode
+	     :ensure t)
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(use-package dockerfile-mode
+	     :ensure t)
 
-(require 'yaml-mode)
-(require 'dockerfile-mode)
+(use-package atom-one-dark-theme
+	     :ensure t
+	     :config
+	     (load-theme 'atom-one-dark t))
 
-(load-theme 'atom-one-dark t)
+(use-package helm
+	     :commands
+	     helm-M-x
+	     helm-mini
+	     :ensure t
+	     :bind
+	     (("M-x" . helm-M-x)
+	      ("C-p" . helm-mini)
+	      :map helm-map
+	      ("<escape>" . keyboard-escape-quit))
+	     :config
+	     (progn
+	       (defadvice helm-display-mode-line
+		   (after undisplay-header activate)
+		 (setq mode-line-format nil)
+		 (setq header-line-format nil))))
 
-(require 'helm-config)
-(defadvice helm-display-mode-line (after undisplay-header activate)
-  (setq mode-line-format nil)
-  (setq header-line-format nil))
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-h") 'helm-mini)
-(define-key helm-map (kbd "<escape>") 'keyboard-escape-quit)
+(use-package evil
+	     :ensure t
+	     :init
+	     (evil-mode 1)
+	     :bind
+	     (:map evil-normal-state-map
+		   (";" . evil-ex)))
+	     
 
-(require 'evil)
-(evil-mode 1)
-(define-key evil-normal-state-map (kbd ";") 'evil-ex)
-(define-key evil-normal-state-map (kbd "C-p") 'helm-find-files)
+
+

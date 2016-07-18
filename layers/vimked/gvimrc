@@ -1,0 +1,38 @@
+""" GUI Chrome
+" no toolbar
+set guioptions-=T
+" no menu
+set guioptions-=m
+" no scrollbars
+set guioptions-=r
+set guioptions-=b
+set guioptions-=l
+
+
+""" Cursor
+set guicursor=
+set guicursor+=n:block-nCursor-blinkon0
+set guicursor+=i:ver30-iCursor-blinkon0
+set guicursor+=v:block-vCursor-blinkon0
+set guicursor+=o:block-oCursor-blinkon0
+set guicursor+=c:block-cCursor-blinkon0
+set guicursor+=r:hor30-rCursor-blinkon0
+
+highlight nCursor guifg=white guibg=blue
+highlight vCursor guifg=black guibg=yellow
+highlight iCursor guifg=white guibg=green
+highlight rCursor guifg=white guibg=red
+highlight oCursor guifg=white guibg=purple
+highlight cCursor guifg=black guibg=white
+
+
+""" Font
+set guifont=Inconsolata\ 16
+
+
+""" Colours
+set background=dark
+highlight Normal guibg=black guifg=white
+highlight NonText guifg=darkgrey
+highlight LineNr guibg=black guifg=darkgrey
+highlight FoldColumn guibg=black guifg=white

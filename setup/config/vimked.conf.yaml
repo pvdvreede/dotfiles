@@ -1,0 +1,11 @@
+---
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- link:
+    ~/.vimrc: layers/vimked/vimrc
+    ~/.vim/bundle: layers/vimked/vim/bundle
+    ~/.gvimrc: layers/vimked/gvimrc

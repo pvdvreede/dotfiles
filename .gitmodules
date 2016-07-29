@@ -25,3 +25,6 @@
 [submodule "layers/vim/bundle/theme-stereokai"]
 	path = layers/vim/bundle/theme-stereokai
 	url = https://github.com/gummesson/stereokai.vim.git
+[submodule "layers/neovim/src"]
+	path = layers/neovim/src
+	url = https://github.com/neovim/neovim.git

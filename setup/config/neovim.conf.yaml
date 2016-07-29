@@ -1,0 +1,15 @@
+---
+- defaults:
+    link:
+      create: true
+      force: true
+      relink: true
+
+- shell:
+    - git submodule update --init --recursive layers/vim
+    - git submodule update --init --recursive layers/neovim
+    - sudo apt-get install -yq libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+
+- link:
+    ~/.config/nvim/init.vim: layers/vim/vimrc
+    ~/.config/nvim/bundle: layers/vim/bundle

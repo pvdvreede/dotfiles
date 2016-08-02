@@ -1,7 +1,3 @@
-function fish_prompt
-  printf '%s%s%s >%s ' (set_color cyan) (prompt_pwd) (set_color white) (set_color normal)
-end
-
 function fish_greeting
   date
 end

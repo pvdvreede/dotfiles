@@ -13,5 +13,10 @@
     ~/.bashrc: layers/common/bashrc
     ~/.tmux.conf: layers/common/tmux.conf
     ~/.config/fish/config.fish: layers/common/config.fish
+    ~/.config/fish/fishfile: layers/common/fishfile
     ~/.fonts: layers/common/fonts
     ~/.bin/docker: layers/docker
+
+- shell:
+  - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+  - fisher install

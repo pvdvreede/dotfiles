@@ -18,5 +18,5 @@
     ~/.bin/docker: layers/docker
 
 - shell:
-  - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-  - fisher install
+  - "[ -f ~/.config/fish/functions/fisher.fish ] || curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher"
+  - /usr/bin/fish -c "fisher install"

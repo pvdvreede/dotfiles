@@ -20,6 +20,10 @@ nnoremap <silent> - :m .-2<cr>==
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 
+nnoremap [ mzo<esc>`z
+nnoremap ] mzO<esc>`z
+
+
 " File save status {{{1
 function! s:SetFileSaveStatus()
   if (&mod ==# 1)

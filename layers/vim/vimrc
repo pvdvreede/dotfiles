@@ -20,6 +20,20 @@ nnoremap <silent> - :m .-2<cr>==
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 
+" File save status {{{1
+function! s:SetFileSaveStatus()
+  if (&mod ==# 1)
+    highlight LineNr ctermfg=white
+  else
+    highlight LineNr ctermfg=darkgray
+  endif
+endfunction
+
+augroup FileSaveStatus
+  autocmd!
+  autocmd BufWritePost,TextChanged,TextChangedI * call <SID>SetFileSaveStatus()
+augroup END
+
 
 " Modal Status {{{1
 function! s:SetVisualColor()

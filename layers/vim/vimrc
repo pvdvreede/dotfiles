@@ -22,15 +22,17 @@ vnoremap <silent> > >gv
 
 
 " Modal Status {{{1
-set cul
+function! s:SetVisualColor()
+  highlight CursorLineNr ctermbg=yellow ctermfg=white
+endfunction
 
+" TODO: account for replace mode here
 function! s:SetInsertColor()
   highlight CursorLineNr ctermbg=green ctermfg=white
 endfunction
 
 function! s:SetNormalColor()
   highlight CursorLineNr ctermbg=blue ctermfg=white
-  redraw
 endfunction
 
 augroup ModalStatus
@@ -39,5 +41,16 @@ augroup ModalStatus
   autocmd InsertLeave * call s:SetNormalColor()
 augroup END
 
+" Setup visual mode hooks
+vnoremap <silent> <expr> <SID>SetVisualColor <SID>SetVisualColor()
+vnoremap <silent> <esc> <esc>:call <SID>SetNormalColor()<cr>
+vnoremap <silent> <C-\><C-n> <esc>:call <SID>SetNormalColor()<cr>
+vnoremap <silent> <C-c> <esc>:call <SID>SetNormalColor()<cr>
+nnoremap <silent> <script> v v<SID>SetVisualColor
+nnoremap <silent> <script> V V<SID>SetVisualColor
+nnoremap <silent> <script> <C-v> <C-v><SID>SetVisualColor
+
 call s:SetNormalColor()
+
+set noshowmode
 

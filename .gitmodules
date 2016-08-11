@@ -25,3 +25,6 @@
 [submodule "layers/vim/bundle/vim-tmux-runner"]
 	path = layers/vim/bundle/vim-tmux-runner
 	url = https://github.com/christoomey/vim-tmux-runner.git
+[submodule "layers/vim/bundle/vim-easy-align"]
+	path = layers/vim/bundle/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git

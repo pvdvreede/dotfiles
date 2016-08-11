@@ -14,14 +14,16 @@ set noruler
 
 
 " Movement {{{1
+let mapleader=","
+
 nnoremap <silent> = :m .+1<cr>==
 nnoremap <silent> - :m .-2<cr>==
 
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 
-nnoremap [ mzo<esc>`z
-nnoremap ] mzO<esc>`z
+nnoremap [ mzO<esc>`z
+nnoremap ] mzo<esc>`z
 
 
 " File save status {{{1
@@ -38,37 +40,17 @@ augroup FileSaveStatus
   autocmd BufWritePost,TextChanged,TextChangedI * call <SID>SetFileSaveStatus()
 augroup END
 
+set showmode
 
-" Modal Status {{{1
-function! s:SetVisualColor()
-  highlight CursorLineNr ctermbg=yellow ctermfg=white
-endfunction
 
-" TODO: account for replace mode here
-function! s:SetInsertColor()
-  highlight CursorLineNr ctermbg=green ctermfg=white
-endfunction
+" Plugins {{{1
+" vim-easy-align {{{2
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
-function! s:SetNormalColor()
-  highlight CursorLineNr ctermbg=blue ctermfg=white
-endfunction
-
-augroup ModalStatus
-  autocmd!
-  autocmd InsertEnter * call s:SetInsertColor()
-  autocmd InsertLeave * call s:SetNormalColor()
-augroup END
-
-" Setup visual mode hooks
-vnoremap <silent> <expr> <SID>SetVisualColor <SID>SetVisualColor()
-vnoremap <silent> <esc> <esc>:call <SID>SetNormalColor()<cr>
-vnoremap <silent> <C-\><C-n> <esc>:call <SID>SetNormalColor()<cr>
-vnoremap <silent> <C-c> <esc>:call <SID>SetNormalColor()<cr>
-nnoremap <silent> <script> v v<SID>SetVisualColor
-nnoremap <silent> <script> V V<SID>SetVisualColor
-nnoremap <silent> <script> <C-v> <C-v><SID>SetVisualColor
-
-call s:SetNormalColor()
-
-set noshowmode
+" vim-tmux-runner {{{2
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
+let g:VtrUseVtrMaps = 1
 

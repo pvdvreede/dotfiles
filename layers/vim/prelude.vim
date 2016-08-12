@@ -13,8 +13,6 @@ set backspace=indent,eol,start
 set numberwidth=4
 set wildmode=longest,list,full
 set winaltkeys=no
-set timeoutlen=200
-set ttimeoutlen=0
 set esckeys
 
 " Spacing {{{1
@@ -30,7 +28,6 @@ set t_Co=256
 " Invisible chars {{{1
 set list
 set listchars=tab:>-,trail:~
-
 
 " Misc {{{1
 nnoremap ; :

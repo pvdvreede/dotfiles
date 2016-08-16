@@ -31,3 +31,6 @@
 [submodule "layers/vim/bundle/incsearch.vim"]
 	path = layers/vim/bundle/incsearch.vim
 	url = https://github.com/haya14busa/incsearch.vim.git
+[submodule "layers/vim/bundle/vim-buftabline"]
+	path = layers/vim/bundle/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git

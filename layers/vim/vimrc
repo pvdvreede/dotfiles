@@ -9,6 +9,7 @@ execute pathogen#infect()
 " Visual {{{1
 let g:sierra_Pitch=1
 colorscheme sierra
+highlight MatchParen ctermbg=darkgray ctermfg=white
 set laststatus=0
 set noruler
 

@@ -13,7 +13,7 @@ set backspace=indent,eol,start
 set numberwidth=4
 set wildmode=longest,list,full
 set winaltkeys=no
-set esckeys
+set noesckeys
 
 " Spacing {{{1
 set expandtab
@@ -32,8 +32,15 @@ set listchars=tab:>-,trail:~
 " Misc {{{1
 nnoremap ; :
 
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfunction
+
 augroup Whitespace
   autocmd!
-  autocmd BufWritePre * :%s/\s\+$//e
+  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 augroup END
 set eol

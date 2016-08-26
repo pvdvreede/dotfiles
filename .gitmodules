@@ -19,12 +19,18 @@
 [submodule "layers/vim/bundle/theme-sierra"]
 	path = layers/vim/bundle/theme-sierra
 	url = https://github.com/AlessandroYorba/Sierra.git
-[submodule "layers/vim/bundle/vim-move"]
-	path = layers/vim/bundle/vim-move
-	url = https://github.com/matze/vim-move.git
-[submodule "layers/vim/bundle/theme-stereokai"]
-	path = layers/vim/bundle/theme-stereokai
-	url = https://github.com/gummesson/stereokai.vim.git
 [submodule "layers/neovim/src"]
 	path = layers/neovim/src
 	url = https://github.com/neovim/neovim.git
+[submodule "layers/vim/bundle/vim-tmux-runner"]
+	path = layers/vim/bundle/vim-tmux-runner
+	url = https://github.com/christoomey/vim-tmux-runner.git
+[submodule "layers/vim/bundle/vim-easy-align"]
+	path = layers/vim/bundle/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "layers/vim/bundle/incsearch.vim"]
+	path = layers/vim/bundle/incsearch.vim
+	url = https://github.com/haya14busa/incsearch.vim.git
+[submodule "layers/vim/bundle/vim-buftabline"]
+	path = layers/vim/bundle/vim-buftabline
+	url = https://github.com/ap/vim-buftabline.git

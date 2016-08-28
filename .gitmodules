@@ -34,3 +34,6 @@
 [submodule "layers/vim/bundle/vim-buftabline"]
 	path = layers/vim/bundle/vim-buftabline
 	url = https://github.com/ap/vim-buftabline.git
+[submodule "layers/vim/bundle/vim-elixir"]
+	path = layers/vim/bundle/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git

@@ -54,6 +54,8 @@ let g:VtrStripLeadingWhitespace = 0
 let g:VtrClearEmptyLines = 0
 let g:VtrAppendNewline = 1
 let g:VtrUseVtrMaps = 1
+let g:VtrOrientation = "h"
+let g:VtrPercentage = 35
 
 " insearch.vim {{{2
 set hlsearch

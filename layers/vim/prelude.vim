@@ -13,7 +13,6 @@ set backspace=indent,eol,start
 set numberwidth=4
 set wildmode=longest,list,full
 set winaltkeys=no
-set noesckeys
 
 " Spacing {{{1
 set expandtab
